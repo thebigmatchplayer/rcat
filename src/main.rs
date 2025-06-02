@@ -10,16 +10,13 @@ fn main() {
     }
 
     let input_path = &args[1];
-    println!("{:?}", input_path);
 
     let mut file_name: PathBuf = PathBuf::new();
 
     match std::env::current_dir() {
         Ok(path) => {
             file_name = path;
-            println!("{:?}", file_name);
             file_name.push(input_path);
-            println!("{:?}", file_name)
         }
         Err(err) => eprint!("{}", err),
     }
